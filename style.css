@@ -183,7 +183,8 @@ article .line {
   list-style-type:none;
   text-decoration: none;
 /* this line of code should be replaced with last line of code(-100%) in this sheet just to unhide the menu but coudn't find out how*/
-  transform: translate(10%, 0);
+ transform-origin: 0% 0%; 
+ transform: translate(10%, 0);
 
   transition: transform .5s cubic-bezier(0.77, 0.2, 0.05, 1);
 }
