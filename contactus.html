@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact-Us</title>
+    <link rel="stylesheet" href="contact.css" />
+  </head>
+  <body>
+    <a href="index.html">Return back-home</a>
+    <section>
+      <h2>We highly value your Feedback!</h2>
+      <form
+        action="mailto:mikalsoyra@gmail.com"
+        method="get"
+        enctype="text/plain"
+      >
+        <div>
+          <label for="name"
+            >Name:
+            <input type="text" name="name" id="name" />
+          </label>
+        </div>
+        <div>
+          <label for="email"
+            >Email:
+            <input type="text" name="email" id="email" />
+          </label>
+        </div>
+        <div>
+          <label>Comments:</label>
+          <br />
+          <textarea name="comments" rows="12" cols="35">
+Kindly! Let us know any of your comments ...</textarea
+          >
+        </div>
+        <div>
+          <input class="btn1" type="submit" name="submit" value="Send" />
+          <input class="btn2" type="reset" name="reset" value="Clear Form" />
+        </div>
+      </form>
+    </section>
+  </body>
+</html>

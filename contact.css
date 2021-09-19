@@ -1,0 +1,75 @@
+body {
+  background: rgb(188, 234, 243);
+  font-family: "Roboto", sans-serif;
+  line-height: 1.4;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  margin: 10px;
+  /* text-transform: initial; */
+  padding: 10px;
+  display: inline-block;
+  background: #0d85a3;
+  border-radius: 10px;
+}
+
+a:hover {
+  background: hsl(197, 62%, 65%);
+  color: rgb(41, 37, 37);
+  text-transform: capitalize;
+}
+
+section {
+  max-width: 1400px;
+  width: 100%;
+  margin: 20px 50px;
+  padding: 20px;
+  display: block;
+}
+
+textarea {
+  width: 600px;
+  height: 350px;
+  box-sizing: content-box;
+  padding-top: 10px;
+  padding-left: 4px;
+}
+
+form {
+  padding: 20px;
+}
+h2 {
+  padding: 20px;
+}
+
+label {
+  padding: 20px;
+  line-height: 2;
+}
+
+input {
+  padding: 4px 60px 3px 2px;
+}
+
+.btn1 {
+  padding: 11px;
+  font-size: 14px;
+}
+
+.btn2 {
+  padding: 10px;
+  font-size: 14px;
+}
+.btn1:hover {
+  border: rgb(33, 189, 41) solid 3px;
+  font-weight: bold;
+}
+
+.btn2:hover:hover {
+  border: orangered solid 2px;
+  font-weight: bold;
+}

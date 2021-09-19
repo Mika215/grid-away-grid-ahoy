@@ -1,82 +1,214 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+:root {
+  --primary-color: rgba(50, 156, 189, 0.75);
+  --overlay-color: rgba(24, 39, 51, 0.85);
+  --menu-speed: 0.75s;
 }
 
-body{
-    background: rgb(188, 234, 243);
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-header{
-    margin: 40px;
-    padding-bottom: 30px;
+body {
+  background: rgb(188, 234, 243);
+  font-family: "Roboto", sans-serif;
+  line-height: 1.4;
 }
 
-.nav-bar ul{
-    display: flex;
-    flex-direction:column;
-    justify-content: space-between;
+section {
+  max-width: 1400px;
+  width: 90%;
+  margin: 5em auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-content: left;
+  gap: 25px;
 }
 
+/* Article */
+article {
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0px 0px 50px 0px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  padding: 2em;
+  text-align: center;
+}
 
-section{
-    max-width: 1400px;
-    width: 90%;
-    margin: 5em auto;
-    display: grid;
-    grid-template-columns: repeat(4,1fr);
-    justify-content: center;
-    gap: 25px ;
+article:hover {
+  box-shadow: 0px 8px 0px 0px rgba(167, 174, 179, 0.45);
+  width: 300px;
+  transition: all 0.4s ease;
+}
+
+article h1 {
+  text-transform: initial;
+}
+article img {
+  width: 40%;
+  margin: 1.5em auto;
+}
+
+article .line {
+  width: 90px;
+  height: 1px;
+  opacity: 0.5;
+  background-color: black;
+  margin: 1.5em auto;
+}
+
+/* Button */
+
+.btn {
+  padding: 1em 2em;
+  margin: auto;
+  border: 1px solid transparent;
+  cursor: pointer;
+  background-color: transparent;
+  letter-spacing: 0.1em;
+  font-weight: 600;
+}
+
+.btn:hover {
+  border: 1px solid rgb(136, 197, 238);
+  background: var(--primary-color);
+  border-radius: 50px;
+  color: white;
+  box-shadow: 0px 0px 15px 3px rgba(127, 132, 136, 0.45);
+}
+
+/* Menu-wrap*/
+
+.menu-wrap {
+  display: block;
+  position: fixed;
+  width: 40px;
+  top: 10px;
+  left: 20px;
+  z-index: 1;
+  user-select: none;
+}
+.menu-wrap a {
+    text-decoration: none;
+    color: rgb(19, 24, 4);
+    line-height: inherit;
+    font-weight: 900;
+    font-size: 24px;
+    /* transition: color .3s ease; */
     
 }
 
-article {
-    background-color: white;
-    border-radius: 5px;
-    box-shadow: 0px 0px 50px 0px rgba(0,0,0,.1);
-    width: 300px;
-    padding: 2em;
-    text-align: center;
+.menu-wrap ul{
+    margin-top: 40%;
+    padding-left: 20%;
 }
 
-article:hover{
-    box-shadow: 0px 5px 0px 0px rgba(110, 132, 150, 0.45);  
-    width: 308px;
-    transition:ease-in-out 0.5s;
+.menu-wrap ul li{
+    
+    padding: 7%;
+    list-style: none;
 }
 
-article h1{
-    text-transform:initial;
-}
-article img {
-    width: 40%;
-    margin: 1.5em auto;
-}
+.menu-wrap ul li:hover {
+    border-radius: 10px;
+    color:var(--primary-color);
+    box-shadow: 0px 0px 13px 3px rgba(127, 132, 136, 0.45);
+  }
 
-article .line{ 
-width: 90px;
-height: 1px;
-opacity: .5;
-background-color: black;
-margin: 1.5em auto;
-}  
-
-.btn{
-    padding: 1em 2em;
-    margin: auto;
-    border: 1px solid transparent;
-    cursor: pointer;
-    background-color: transparent;
-    letter-spacing: .1em;
-    font-weight: 600;
-
+.menu-wrap .toggler {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  opacity: 0;
 }
 
-.btn:hover{
-    border: 1px solid rgb(181, 248, 250);
-    background-color: rgb(57, 158, 241);
-    border-radius: 50px;
-    color: white;
-    box-shadow: 0px 0px 30px 0px rgba(74, 170, 244, .45);
+.menu-wrap .hamburger {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 60px;
+  height: 60px;
+  padding: 1rem;
+  background: var(--primary-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
+/* Hamburger Line*/
+
+.menu-wrap .hamburger > div {
+  position: relative;
+  width: 100%;
+  height: 2px;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s ease;
+}
+
+/*Top and Bottom Lines */
+.menu-wrap .hamburger > div:before,
+.menu-wrap .hamburger > div:after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  top: -10px;
+  width: 100%;
+  height: 2px;
+  background: inherit;
+}
+/*Moves Line down */
+.menu-wrap .hamburger > div:after {
+  top: 10px;
+}
+
+.menu {
+  position: block;
+  width: 300px;
+  height: calc(100vh + 50px);
+  margin: -100px 0 0 -50px;
+  padding: 50px;
+  padding-top: 125px;
+
+  background-color:rgb(241, 236, 236); 
+  opacity: 0.9;
+  list-style-type:none;
+  text-decoration: none;
+/* this line of code should be replaced with last line of code(-100%) in this sheet just to unhide the menu but coudn't find out how*/
+  transform: translate(10%, 0);
+
+  transition: transform .5s cubic-bezier(0.77, 0.2, 0.05, 1);
+}
+
+/*Toggler animate*/
+.menu-wrap .toggler:checked + .hamburger > div {
+  transform: rotate(135deg);
+}
+
+/*Turn Lines into X*/
+.menu-wrap .toggler:checked + .hamburger > div:before,
+.menu-wrap .toggler:checked + .hamburger > div:after {
+  top: 0;
+  transform: rotate(90deg);
+}
+/* Rotate on hover when cheked*/
+.menu-wrap .toggler:checked:hover + .hamburger > div {
+  transform: rotate(225deg);
+  
+}
+
+/*Show menu*/
+/*I have missed something while selecting the menue /showing the menue when the input/toggler is checked
+  
+  .menu-wrap .toggler.menu:checked {
+    
+    transform: translate(10%, 0);
+  }
